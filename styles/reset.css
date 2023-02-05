@@ -36,6 +36,7 @@
     display:grid;
     place-items:center;
     border-radius:5px;
+    cursor:pointer;
 }
 .list-group > div:not(:last-child){
     margin-bottom: 12px;

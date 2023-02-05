@@ -105,8 +105,9 @@ function fiveDayForecast(weather){
     let title = document.querySelector("#forecast-title")
     let forecast = document.querySelector('#forecast-list')
 
+    forecast.innerHTML = ''
+
     title.textContent = '5-day Format:'
-    console.log(weather)
     weather.forEach(data =>{
         forecast.innerHTML += `
         <div>
@@ -117,5 +118,15 @@ function fiveDayForecast(weather){
       </div>
         `
     })
-
 }
+
+// Display weather data from history
+
+let history = document.querySelectorAll("#history div")
+
+history.forEach(ht =>{
+    ht.addEventListener('click', (e)=>{
+        let city = e.target.textContent;
+        fetchWeather(city)
+    })
+})
