@@ -52,11 +52,14 @@ function getSearchHistory() {
     }
 }
 
+// Fetch Waether data from openweathermap
 function fetchWeather(city) {
     const openWeatherUri = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`
 
+    // show spinner while asynchronous operation is not done
     let backdrop = document.querySelector("#backdrop")
     backdrop.style.display = 'grid';
+    // send a get request to openweathermap using jquery ajax
     $.ajax({
         url: openWeatherUri,
         success: (data) => {
@@ -125,7 +128,6 @@ function fiveDayForecast(weather) {
 }
 
 // Display weather data from history
-
 function displayHistory() {
     let history = document.querySelectorAll("#history div")
 
