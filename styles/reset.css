@@ -1,0 +1,76 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.input-group-append{
+    width:100%;
+    display:block !important;
+}
+.form-input{
+    width:100%;
+    outline:none;
+    border:1px solid dodgerblue;
+    border-radius: 5px;
+    height:32px;
+    padding: 1px 3px;
+}
+.search-button{
+    width:100% !important;
+    background:dodgerblue !important;
+    margin-top:10px;
+    color:#fff !important;
+    border-radius:5px !important;
+}
+
+.weather-hr{
+    border-top: 2px solid rgba(0,0,0,.1) !important;
+}
+
+.list-group > div{
+    height:35px;
+    width:100%;
+    background:#aaa;
+    text-align:center;
+    display:grid;
+    place-items:center;
+    border-radius:5px;
+}
+.list-group > div:not(:last-child){
+    margin-bottom: 12px;
+}
+
+#today{
+    padding:5px;
+    border-radius:6px;
+}
+#today > h1{
+    text-transform: capitalize;
+}
+#today > p{
+    font-size: 17px;
+}
+
+#forecast{
+    display:block;
+}
+#forecast-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+#forecast-list > div{
+    margin:8px;
+    padding:8px;
+    background:#374352;
+    width:100%;
+    border-radius: 2px;
+    max-width:220px;
+    color:#eee;
+}
+#forecast-list > div > p{
+    font-size: 16px;
+}
+#forecast-list-date{
+    font-weight:500;
+}
