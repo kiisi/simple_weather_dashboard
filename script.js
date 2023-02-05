@@ -54,10 +54,13 @@ function getSearchHistory(){
 function fetchWeather(city){
     const openWeatherUri = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`
 
-    
+    let backdrop = document.querySelector("#backdrop")
+    backdrop.style.display = 'grid';
     $.ajax({
         url: openWeatherUri,
         success:(data)=>{
+            backdrop.style.display = 'none';
+
             let list = data.list
 
             // Getting Weather for each day without 3-hour step
@@ -77,7 +80,7 @@ function fetchWeather(city){
             
         },
         error:()=>{
-            weatherList = undefined
+            backdrop.style.display = 'none';
         }
     })
 
