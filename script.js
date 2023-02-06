@@ -112,6 +112,7 @@ function fiveDayForecast(weather) {
     let title = document.querySelector("#forecast-title")
     let forecast = document.querySelector('#forecast-list')
 
+
     forecast.innerHTML = ''
 
     title.textContent = '5-day Format:'
@@ -119,6 +120,7 @@ function fiveDayForecast(weather) {
         forecast.innerHTML += `
         <div>
         <p id="forecast-list-date">${moment(data.dt_txt.split(' ')[0]).format("DD/MM/YYYY")}</p>
+        <p id="forecast-list-icon">${getWeatherIcon(data.weather[0].id)}</p>
         <p>Temp: ${(data.main.temp - 273).toFixed(2)}&#8451;</p>
         <p>Wind: ${data.wind.speed}M/S</p>
         <p>Humidity: ${data.main.humidity}%</p>
@@ -139,3 +141,24 @@ function displayHistory() {
     })
 }
 displayHistory()
+
+// Display weather icons
+function getWeatherIcon(condition) {
+  if (condition < 300) {
+    return '🌩';
+  } else if (condition < 400) {
+    return '🌧';
+  } else if (condition < 600) {
+    return '☔️';
+  } else if (condition < 700) {
+    return '☃️';
+  } else if (condition < 800) {
+    return '🌫';
+  } else if (condition == 800) {
+    return '☀️';
+  } else if (condition <= 804) {
+    return '☁️';
+  } else {
+    return '🤷‍';
+  }
+}

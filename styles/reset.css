@@ -3,7 +3,9 @@
     padding:0;
     box-sizing:border-box;
 }
-
+.input-group{
+    width:100% !important;
+}
 .input-group-append{
     width:100%;
     display:block !important;
@@ -65,9 +67,10 @@
     padding:8px;
     background:#374352;
     width:100%;
-    border-radius: 2px;
+    border-radius: 5px;
     max-width:220px;
     color:#eee;
+    cursor:pointer;
 }
 #forecast-list > div > p{
     font-size: 16px;
@@ -75,7 +78,10 @@
 #forecast-list-date{
     font-weight:500;
 }
-
+#forecast-list-icon{
+    font-size:50px !important;
+    border-bottom:1px solid #aaa;
+}
 #backdrop{
     height:100vh;
     width:100%;
